@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Coding Journey — Veloria</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ======================= CSS INSIDE ======================= -->
+  <style>
+
+    :root {
+      --raspberry: #ff4fa3;
+      --raspberry-soft: #ff8ec4;
+      --blueberry: #4d7dff;
+      --text-main: #f5f5ff;
+      --text-soft: #c8c7f0;
+      --card-bg: rgba(20, 12, 35, 0.85);
+    }
+
+    body.journey-body {
+      background: radial-gradient(circle at top, #2b123a, #07040a 70%);
+      font-family: "Poppins", sans-serif;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    /* Cursor */
+    .cursor-dot {
+      position: fixed;
+      width: 14px;
+      height: 14px;
+      background: radial-gradient(circle, var(--raspberry-soft), var(--blueberry));
+      border-radius: 50%;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    /* Container */
+    .journey-container {
+      max-width: 1020px;
+      margin: 60px auto;
+      padding: 0 20px 80px;
+    }
+
+    /* =================== HERO =================== */
+    .journey-hero-title {
+      font-size: 3.3rem;
+      text-align: center;
+      margin-bottom: 14px;
+      background: linear-gradient(120deg, var(--blueberry), var(--raspberry));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .journey-hero-sub {
+      text-align: center;
+      color: var(--text-soft);
+      max-width: 720px;
+      margin: 0 auto 50px;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    /* =================== SECTION BLOCK =================== */
+    .journey-section {
+      margin: 70px 0;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .journey-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .journey-sec-head {
+      margin-bottom: 24px;
+    }
+
+    .journey-sec-year {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--raspberry-soft);
+    }
+
+    .journey-sec-title {
+      font-size: 2.3rem;
+      margin: 6px 0;
+    }
+
+    .journey-sec-loc {
+      color: var(--text-soft);
+      font-size: 1.15rem;
+      margin-top: 4px;
+    }
+
+    /* =================== IMAGE GALLERY =================== */
+    .journey-sec-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 28px 0 20px;
+    }
+
+    .journey-img {
+      width: 100%;
+      height: 340px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.7);
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .journey-section.visible .journey-img {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =================== TEXT =================== */
+    .journey-sec-desc {
+      color: var(--text-soft);
+      font-size: 1.12rem;
+      line-height: 1.75;
+      max-width: 880px;
+    }
+
+    /* Back Button */
+    .journey-footer {
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    .btn-back {
+      padding: 12px 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: transparent;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+
+    .btn-back:hover {
+      border-color: var(--raspberry-soft);
+      box-shadow: 0 0 20px rgba(255,79,163,0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 780px) {
+      .journey-sec-gallery { grid-template-columns: 1fr; }
+      .journey-hero-title { font-size: 2.5rem; }
+    }
+
+  </style>
+</head>
+
+<body class="journey-body">
+
+  <!-- Cursor -->
+  <div class="cursor-dot"></div>
+
+  <!-- Main container -->
+  <div class="journey-container">
+
+    <!-- HERO -->
+    <header class="journey-hero reveal">
+      <h1 class="journey-hero-title">My Coding Journey</h1>
+      <p class="journey-hero-sub">
+        A  walk through my hackathons, leadership roles, internships,
+        and milestones that shaped me as a creative engineer.
+      </p>
+    </header>
+
+     <section class="journey-section reveal">
+      <div class="journey-sec-head">
+        <span class="journey-sec-year">2025</span>
+        <h2 class="journey-sec-title">Team member- National level mini- Hackathon and quiz</h2>
+        <h3 class="journey-sec-loc">Tumkur , India</h3>
+      </div>
+
+      <div class="journey-sec-gallery">
+        <img src="images/journey/mini-1.jpg" class="journey-img">
+        <img src="images/journey/mini-2.jpg" class="journey-img">
+      </div>
+
+      <p class="journey-sec-desc">
+       EcoSphere AI is an AI-driven environmental anomaly detection system that identifies issues using real-time data, provides actionable recommendations, and connects them to NGOs for faster resolution.
+Building this project strengthened my technical skills in Flask, MySQL, and data visualization while deepening my understanding of environmental challenges.
+My participation in the quiz event further enhanced my analytical thinking and accuracy, which contributed to designing a more reliable and impactful solution.
+      </p>
+    </section>
+    <!-- ====================================================
+         SECTION 1 — SOFTWARE INTERN
+         ==================================================== -->
+    <section class="journey-section reveal">
+      <div class="journey-sec-head">
+        <span class="journey-sec-year">2025</span>
+        <h2 class="journey-sec-title">Software Intern</h2>
+        <h3 class="journey-sec-loc">Agnirva Space Community · Remote</h3>
+      </div>
+
+      <div class="journey-sec-gallery">
+        <img src="images/journey/agnirva-1.jpg" class="journey-img">
+        <img src="images/journey/agnirva-2.jpg" class="journey-img">
+      </div>
+
+      <p class="journey-sec-desc">
+        Worked as a Python-based development intern focusing on automation,
+        internal tooling, and support modules for research workflows in the
+        virtual space-tech ecosystem.
+      </p>
+    </section>
+
+    <!-- ====================================================
+         SECTION 2 — PLACEMENT COORDINATOR
+         ==================================================== -->
+    <section class="journey-section reveal">
+      <div class="journey-sec-head">
+        <span class="journey-sec-year">2025</span>
+        <h2 class="journey-sec-title">Student Placement Coordinator</h2>
+        <h3 class="journey-sec-loc">PESITM · CSD Branch · Shivamogga</h3>
+      </div>
+
+      <div class="journey-sec-gallery">
+        <img src="images/journey/placement-1.jpg" class="journey-img">
+        <img src="images/journey/placement-2.jpg" class="journey-img">
+      </div>
+
+      <p class="journey-sec-desc">
+        Managed communication with placement cells, coordinated company visits,
+        aligned schedules, verified student readiness, and ensured smooth
+        placement operations.
+      </p>
+    </section>
+
+    <!-- ====================================================
+         SECTION 3 — FOSS HACKATHON
+         ==================================================== -->
+    <section class="journey-section reveal">
+      <div class="journey-sec-head">
+        <span class="journey-sec-year">Feb 2025</span>
+        <h2 class="journey-sec-title">Team Leader — FOSS Hackathon</h2>
+        <h3 class="journey-sec-loc">Shivamogga, India</h3>
+      </div>
+
+      <div class="journey-sec-gallery">
+        <img src="images/journey/foss-1.jpg" class="journey-img">
+        <img src="images/journey/foss-2.jpg" class="journey-img">
+      </div>
+
+      <p class="journey-sec-desc">
+        Led Team Code Crafters, coordinated backend–frontend integration,
+        resolved technical blockers, and guided the SLAV project through
+        architecture and workflow decisions.
+      </p>
+    </section>
+
+    <!-- ====================================================
+         SECTION 4 — SIH
+         ==================================================== -->
+    <section class="journey-section reveal">
+      <div class="journey-sec-head">
+        <span class="journey-sec-year">Dec 2024</span>
+        <h2 class="journey-sec-title">Team Member — Smart India Hackathon</h2>
+        <h3 class="journey-sec-loc">Greater Noida, India</h3>
+      </div>
+
+      <div class="journey-sec-gallery">
+        <img src="images/journey/sih-1.jpg" class="journey-img">
+        <img src="images/journey/sih-2.jpg" class="journey-img">
+      </div>
+
+      <p class="journey-sec-desc">
+        Worked on Axiom Trace, a Cyber Triage tool for digital forensics.
+        Contributed to documentation, evidence flows, UI support, and final
+        jury presentation.
+      </p>
+    </section>
+
+    <!-- ====================================================
+         SECTION 5 — ETHNIC DAY
+         ==================================================== -->
+    <section class="journey-section reveal">
+      <div class="journey-sec-head">
+        <span class="journey-sec-year">Dec 2024</span>
+        <h2 class="journey-sec-title">Volunteer — Ethnic Day</h2>
+        <h3 class="journey-sec-loc">Shivamogga, India</h3>
+      </div>
+
+      <div class="journey-sec-gallery">
+        <img src="images/journey/ethnic-1.jpg" class="journey-img">
+        <img src="images/journey/ethnic-2.jpg" class="journey-img">
+      </div>
+
+      <p class="journey-sec-desc">
+        Coordinated cultural events, stage management, logistics, and campus
+        participation during Ethnic Day celebrations.
+      </p>
+    </section>
+    
+     <section class="journey-section reveal">
+      <div class="journey-sec-head">
+        <span class="journey-sec-year">2024</span>
+        <h2 class="journey-sec-title">Recipient of Academic Excellence of the year</h2>
+        <h3 class="journey-sec-loc">PESITM | CSD | Shimogga, India</h3>
+      </div>
+
+      <div class="journey-sec-gallery">
+        <img src="images/journey/aca-1.jpg" class="journey-img">
+        <img src="images/journey/aca-2.jpg" class="journey-img">
+      </div>
+
+      <p class="journey-sec-desc">
+strong academic commitment with consistently high performance across core Computer Science and Design subjects.
+      </p>
+    </section>
+
+    <!-- ====================================================
+         SECTION 6 — NATIONAL HACKATHON
+         ==================================================== -->
+    <section class="journey-section reveal">
+      <div class="journey-sec-head">
+        <span class="journey-sec-year">Oct 2024</span>
+        <h2 class="journey-sec-title">Team Manager — National Hackathon</h2>
+        <h3 class="journey-sec-loc">Tumkur, India</h3>
+      </div>
+
+      <div class="journey-sec-gallery">
+        <img src="images/journey/ambience-1.jpg" class="journey-img">
+        <img src="images/journey/ambience-2.jpg" class="journey-img">
+      </div>
+
+      <p class="journey-sec-desc">
+        Led the Ambience air-quality monitoring project. Integrated environmental
+        data sources, Java-based sensors, and coordinated team planning,
+        design, and presentation delivery.
+      </p>
+    </section>
+
+    <!-- BACK BUTTON -->
+    <div class="journey-footer">
+      <a href="index.html" class="btn-back">← Back to Portfolio</a>
+    </div>
+
+  </div>
+
+  <!-- ======================= JS INSIDE ======================= -->
+  <script>
+    // Cursor glow follow
+    const cursor = document.querySelector(".cursor-dot");
+    document.addEventListener("mousemove", e => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+
+    // Reveal on scroll
+    const sections = document.querySelectorAll(".journey-section, .journey-hero");
+    function revealOnScroll() {
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 120) {
+          sec.classList.add("visible");
+        }
+      });
+    }
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script>
+
+</body>
+</html>
